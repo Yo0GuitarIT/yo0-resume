@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export const metadata = {
-    title: "My App",
-    description: "A clean template",
+    title: "Yo0's Resume",
+    description: "This is Yo0's resume",
 };
 
 type LayoutProps = {
