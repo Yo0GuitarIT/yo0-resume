@@ -1,5 +1,6 @@
-import { FC, useState } from 'react';
+'use client';
 import { Plus, X, Translate, Printer } from '@phosphor-icons/react';
+import { FC, useState } from 'react';
 
 interface FabProps {}
 

@@ -1,41 +1,47 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
+import importPlugin from 'eslint-plugin-import';
+import prettierPlugin from 'eslint-plugin-prettier';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const compat = new FlatCompat();
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends('next/core-web-vitals'),
-  {
-    plugins: ['import', 'prettier'],
-    rules: {
-      'no-unused-vars': [
-        'warn',
-        { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
-      ],
-      'import/order': [
-        'warn',
-        {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            'parent',
-            'sibling',
-            'index',
-          ],
-          'newlines-between': 'always',
-          alphabetize: { order: 'asc', caseInsensitive: true },
+export default [
+    ...compat.extends('next/core-web-vitals'),
+    {
+        files: ['**/*.{js,jsx,ts,tsx}'],
+        languageOptions: {
+            parserOptions: {
+                ecmaVersion: 'latest',
+                sourceType: 'module',
+                ecmaFeatures: {
+                    jsx: true,
+                },
+            },
         },
-      ],
-      'prettier/prettier': 'warn',
+        plugins: {
+            import: importPlugin,
+            prettier: prettierPlugin,
+        },
+        rules: {
+            'no-unused-vars': [
+                'warn',
+                { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
+            ],
+            'import/order': [
+                'warn',
+                {
+                    groups: [
+                        'builtin',
+                        'external',
+                        'internal',
+                        'parent',
+                        'sibling',
+                        'index',
+                    ],
+                    'newlines-between': 'always',
+                    alphabetize: { order: 'asc', caseInsensitive: true },
+                },
+            ],
+            'prettier/prettier': 'warn',
+        },
     },
-  },
 ];
-
-export default eslintConfig;
