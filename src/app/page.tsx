@@ -1,14 +1,25 @@
-import React from "react";
+'use client';
 
-export default function Home(): React.ReactElement {
+import { ReactElement } from 'react';
+import Fab from './components/Fab';
+
+export default function Home(): ReactElement {
+    const buttons = [
+        {
+            label: '列印',
+            onClick: () => console.log('列印 clicked'),
+            className: 'bg-blue-500 text-white p-4 rounded-full shadow-md',
+        },
+        {
+            label: 'i8n',
+            onClick: () => console.log('i8n clicked'),
+            className: 'bg-green-500 text-white p-4 rounded-full shadow-md',
+        },
+    ];
+
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-                {/* Content removed */}
-            </main>
-            <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-                {/* Footer content removed */}
-            </footer>
+        <div className="relative min-h-screen">
+            <Fab/>
         </div>
     );
 }
