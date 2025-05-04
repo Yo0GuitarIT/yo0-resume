@@ -4,7 +4,7 @@ import prettierPlugin from 'eslint-plugin-prettier';
 
 const compat = new FlatCompat();
 
-export default [
+const eslintConfig = [
     ...compat.extends('next/core-web-vitals'),
     {
         files: ['**/*.{js,jsx,ts,tsx}'],
@@ -45,3 +45,5 @@ export default [
         },
     },
 ];
+
+export default eslintConfig;
