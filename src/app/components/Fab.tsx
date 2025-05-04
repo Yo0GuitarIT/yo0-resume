@@ -1,14 +1,23 @@
 'use client';
 import { Plus, X, Translate, Printer } from '@phosphor-icons/react';
 import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface FabProps {}
 
 const Fab: FC<FabProps> = () => {
+    const { i18n } = useTranslation();
     const [showButtons, setShowButtons] = useState<boolean[]>(
         Array(2).fill(false)
     );
     const isExpanded = showButtons.some((v) => v); // 更清楚的狀態判斷
+
+    const toggleLanguage = () => {
+        const currentLang = i18n.language;
+        const newLang = currentLang === 'zh' ? 'en' : 'zh';
+        i18n.changeLanguage(newLang);
+        console.log(`Language changed to ${newLang}`);
+    };
 
     const buttons = [
         {
@@ -18,7 +27,7 @@ const Fab: FC<FabProps> = () => {
         },
         {
             label: <Translate size={24} />,
-            onClick: () => console.log('i18n clicked'),
+            onClick: toggleLanguage,
             className: 'bg-green-500 text-white p-4 rounded-full shadow-md',
         },
     ];
