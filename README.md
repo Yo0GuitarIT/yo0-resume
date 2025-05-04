@@ -1,8 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# YO0 Resume
+
+A modern, multilingual personal resume built with Next.js and React.
+
+## Overview
+
+This project is a responsive resume website that supports multiple languages (currently English and Chinese) using react-i18next for internationalization. It features a clean user interface with language switching capabilities and is optimized for both desktop and mobile viewing.
+
+## Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
+- **Runtime**: [React 19](https://react.dev/)
+- **Styling**: [TailwindCSS 4](https://tailwindcss.com/)
+- **Internationalization**: [i18next](https://www.i18next.com/) + [react-i18next](https://react.i18next.com/)
+- **Icons**: [@phosphor-icons/react](https://github.com/phosphor-icons/react)
+- **Development**:
+    - TypeScript
+    - ESLint
+    - Prettier
+    - TurboPack (Next.js bundler)
+
+## Features
+
+- 💬 Multilingual support (English/Chinese)
+- 📱 Responsive design
+- 🌓 Language switching capability
+- 🖨️ Print-friendly layout
+- ⚡ Fast loading with optimized asset delivery
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +47,28 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the resume.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can modify the translation content in `src/app/i18n.ts` to update the resume information in different languages.
 
-## Learn More
+## Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This Next.js application can be deployed on Vercel or any other platform that supports Next.js deployments.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
