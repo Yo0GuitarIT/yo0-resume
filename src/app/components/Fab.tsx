@@ -1,5 +1,10 @@
 'use client';
-import { Plus, X, Translate, Printer } from '@phosphor-icons/react';
+import {
+    PlusIcon,
+    XIcon,
+    TranslateIcon,
+    PrinterIcon,
+} from '@phosphor-icons/react';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -21,12 +26,12 @@ const Fab: FC<FabProps> = () => {
 
     const buttons = [
         {
-            label: <Printer size={24} />,
+            label: <PrinterIcon size={24} />,
             onClick: () => console.log('列印 clicked'),
             className: 'bg-blue-500 text-white p-4 rounded-full shadow-md',
         },
         {
-            label: <Translate size={24} />,
+            label: <TranslateIcon size={24} />,
             onClick: toggleLanguage,
             className: 'bg-green-500 text-white p-4 rounded-full shadow-md',
         },
@@ -83,7 +88,7 @@ const Fab: FC<FabProps> = () => {
                     isExpanded ? 'rotate-360' : 'rotate-0'
                 }`}
             >
-                {isExpanded ? <X size={24} /> : <Plus size={24} />}
+                {isExpanded ? <XIcon size={24} /> : <PlusIcon size={24} />}
             </button>
         </div>
     );
