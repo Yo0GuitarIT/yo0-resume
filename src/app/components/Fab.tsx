@@ -1,9 +1,9 @@
 'use client';
 import {
-    PlusIcon,
     XIcon,
     TranslateIcon,
     PrinterIcon,
+    ListIcon,
 } from '@phosphor-icons/react';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -88,7 +88,7 @@ const Fab: FC<FabProps> = () => {
                     isExpanded ? 'rotate-360' : 'rotate-0'
                 }`}
             >
-                {isExpanded ? <XIcon size={24} /> : <PlusIcon size={24} />}
+                {isExpanded ? <XIcon size={24} /> : <ListIcon size={24} />}
             </button>
         </div>
     );
